@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxstorage.FormController">
+  <tabs>
+    <Tab text="Images">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="484.0" prefWidth="600.0">
+               <children>
+                  <TableView fx:id="imageTable" editable="true" layoutX="5.0" layoutY="5.0" onKeyReleased="#onKeyReleased" onMouseClicked="#selectImage" prefHeight="695.0" prefWidth="450.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0">
+                    <columns>
+                      <TableColumn fx:id="descriptionCol" prefWidth="270.0" text="description" />
+                        <TableColumn fx:id="idCol" editable="false" prefWidth="140.0" text="id" />
+                    </columns>
+                  </TableView>
+                  <Button layoutX="6.0" layoutY="706.0" mnemonicParsing="false" onAction="#addImage" prefHeight="25.0" prefWidth="450.0" text="Add" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+                  <ProgressBar fx:id="progressBar" layoutX="465.0" layoutY="705.0" prefHeight="20.0" prefWidth="550.0" progress="0.0" visible="false" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="465.0" AnchorPane.rightAnchor="10.0" />
+                  <BorderPane layoutX="520.0" layoutY="26.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="465.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                     <center>
+                        <ImageView fx:id="image" fitHeight="695.0" fitWidth="550.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="settingsTab" text="Settings">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button layoutX="835.0" layoutY="45.0" mnemonicParsing="false" onAction="#setConnection" prefHeight="25.0" prefWidth="235.0" text="Connect" AnchorPane.rightAnchor="10.0" />
+                  <Label layoutX="20.0" layoutY="15.0" text="Driver:" AnchorPane.leftAnchor="10.0" />
+                  <ComboBox fx:id="driverList" layoutX="50.0" layoutY="12.0" prefHeight="25.0" prefWidth="390.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="585.0" AnchorPane.topAnchor="12.0" />
+                  <TextArea fx:id="messageArea" layoutX="10.0" layoutY="80.0" prefHeight="650.0" prefWidth="1005.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="80.0" />
+                  <Label layoutX="450.0" layoutY="15.0" text="IP-address:" AnchorPane.rightAnchor="520.0" />
+                  <Label layoutX="750.0" layoutY="15.0" text="Port:" AnchorPane.rightAnchor="250.0" />
+                  <Label layoutX="20.0" layoutY="50.0" text="User:" AnchorPane.leftAnchor="10.0" />
+                  <Label layoutX="450.0" layoutY="50.0" text="Password:" AnchorPane.rightAnchor="520.0" />
+                  <TextField fx:id="ip" layoutX="510.0" layoutY="12.0" prefHeight="25.0" prefWidth="235.0" AnchorPane.rightAnchor="280.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <TextField fx:id="port" layoutX="835.0" layoutY="12.0" prefHeight="25.0" prefWidth="235.0" AnchorPane.rightAnchor="10.0" />
+                  <TextField fx:id="user" layoutX="50.0" layoutY="45.0" prefHeight="25.0" prefWidth="390.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="585.0" AnchorPane.topAnchor="45.0" />
+                  <PasswordField fx:id="password" layoutX="510.0" layoutY="46.0" prefHeight="25.0" prefWidth="235.0" AnchorPane.rightAnchor="280.0" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
